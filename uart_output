@@ -1,0 +1,91 @@
+# screen /dev/ttyUSB1 38400 8N1
+
+==========Loader start===========
+Press any key to start the normal procedure.
+To run SPI flash viewer, press [v]
+To enforce the download of the runtime kernel, press [ESC] .....
+    Check Runtime Image.....
+    Chksum Correct!
+    RunTime Kernel Starting....
+SalFlshCopyFlshToCache()
+sal_green_restore()...OK
+sal_sys_config_restore() device_type = TL-SG105E
+...OK
+sal_mirror_config_restore()...OK
+sal_qos_config_restore()...OK
+sal_vlan_config_restore()...OK
+sal_trunk_config_restore()...OK
+sal_rate_config_restore()...OK
+sal_port_config_restore()...OK
+sal_l2_config_restore()...OK
+sal_loop_config_restore()...OK
+sal_eee_restore()...OK
+sal_igmp_restore()...OK
+SignCheck start!
+SignCheck Pass.
+
+
+// pressing [v]
+
+==========Loader start===========
+Press any key to start the normal procedure.
+To run SPI flash viewer, press [v]
+To enforce the download of the runtime kernel, press [ESC] ..
+=========================SPI FLASH VIEWER=============================
+    b: reboot
+    e <addr>: Erase flash with the address of <addr>
+    ev <addr>: Erase flash with the address of <addr> and then Verify
+    r <addr> <len>: read flash from the address of <addr> and then dump
+    c: check runtime kernel without boot
+    cb: check runtime kernel and boot if checksum is pass
+    h: print header
+    l: load runtime kernel
+    v: show verobose information
+    m: print this menu
+    q: quit from spi flash view
+>h
+    magic_number:  0x12341054
+    length:        0x0010f340 (1110848)
+    header_chksum: 0x000004e0
+    payload_chksum:0x03b4652e
+    reserved:      0x332255ff
+>v
+There 2 protected region(s).
+    Portected region 0: x0000000-0x001000
+    Portected region 1: 0x004000-0x01c000
+
+
+>r 0x004000 10
+         00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+[004000] 20 98 03 7f ff 22 c2 98 af 99 22 7d 04 7c 00 7f   ..."...."}.|.
+[004010] 32 7e 1d 12 0f 8b 7d 00 7c 01 7f 3f 7e 1d 12 0f  2~....}.|.?~...
+[004020] 8b 7d 0a 7c 54 7f 00 7e 1b 12 0f 8b 7d 96 7c 00  .}.|T.~....}.|.
+[004030] 7f 03 7e 1b 12 0f 8b 7f 0c 7e 13 12 0f 27 ef 44  .~.....~...'.D
+length=0x10(16)
+
+
+// Pressing [ESC]
+
+==========Loader start===========
+Press any key to start the normal procedure.
+To run SPI flash viewer, press [v]
+To enforce the download of the runtime kernel, press [ESC] .
+loader start
+load MAC from nvcfg
+  IP:192.168.0.1
+Mask:255.255.255.0
+  GW:0.0.0.0
+ MAC:74.DA.88.A4.34.8A
+
+
+// after boot, pressing [h]
+
+     ****************    RTL8367C    ****************
+     c: Clear Screen
+     i: Print IP
+     h: Help Menu
+     u: Enter Loader Mode
+     m: Set MAC Address
+     r: Reboot
+     ************************************************
+
